@@ -1,0 +1,33 @@
+Requirements:
+PHP 5.xx
+MySQL 5.1
+
+Install:
+
+1) Extract contents of package.
+2) Edit w-slow/index.php for MySQL connect information at the top:
+   MARKED WITH SET HERE
+3) Open w-slow/index.php, this will set the logging and slow log time to 1
+4) Load pages as you normally would during development.
+5) Reload w-slow/index.php to see MySQL slow log of any SELECT statements.
+6) Truncate and turn off via the link provided.  This will set your slow log time to default
+   and will turn off your slow log.  Close the page.
+7) To re-enable your slow query log, just reload w-slow/index.php
+
+Please Note, you need to have adequate permissions for to administer your MySQL database for w-slow
+to work.
+
+w-Slow only looks at SELECT queries that have accumulated in the slow log.  For a complete list
+of your slow log, you can query within phpMyAdmin using:
+
+SELECT * FROM mysql.slow_log
+
+This will show you all queries.
+
+Further information about EXPLAIN can be found here:
+
+* http://dev.mysql.com/doc/refman/5.0/en/using-explain.html
+
+
+This script uses blueprint.css.  Please read the credits and documentation provided in
+styles/blueprint
